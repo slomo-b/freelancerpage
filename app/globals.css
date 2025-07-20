@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.75rem;
+
+    /* Custom vibrant colors */
+    --vibrant-purple: 262.1 83.3% 57.8%;
+    --vibrant-blue: 217.2 91.2% 59.8%;
+    --vibrant-cyan: 189.4 94.5% 53.1%;
+    --vibrant-pink: 322.2 84.5% 64.7%;
+    --vibrant-orange: 24.6 95% 53.1%;
+    --vibrant-green: 142.1 76.2% 36.3%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 263.4 70% 50.4%;
+
+    /* Custom vibrant colors for dark mode */
+    --vibrant-purple: 263.4 70% 50.4%;
+    --vibrant-blue: 217.2 91.2% 59.8%;
+    --vibrant-cyan: 189.4 94.5% 53.1%;
+    --vibrant-pink: 322.2 84.5% 64.7%;
+    --vibrant-orange: 24.6 95% 53.1%;
+    --vibrant-green: 142.1 76.2% 36.3%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gradient-purple-blue {
+    background: linear-gradient(135deg, hsl(var(--vibrant-purple)), hsl(var(--vibrant-blue)));
+  }
+  .gradient-blue-cyan {
+    background: linear-gradient(135deg, hsl(var(--vibrant-blue)), hsl(var(--vibrant-cyan)));
+  }
+  .gradient-pink-purple {
+    background: linear-gradient(135deg, hsl(var(--vibrant-pink)), hsl(var(--vibrant-purple)));
+  }
+  .gradient-orange-pink {
+    background: linear-gradient(135deg, hsl(var(--vibrant-orange)), hsl(var(--vibrant-pink)));
+  }
+  .gradient-cyan-green {
+    background: linear-gradient(135deg, hsl(var(--vibrant-cyan)), hsl(var(--vibrant-green)));
+  }
+}
