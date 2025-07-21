@@ -16,9 +16,9 @@ export const translations = {
     exploreServices: "Explore Services",
 
     // About Section
-    aboutMo: "About Mo",
+    aboutMo: "About Me",
     aboutDescription1:
-      "I'm a passionate freelance web developer who thrives on creating digital experiences that make a difference. With deep expertise in modern web technologies and AI integration, I transform ideas into powerful, scalable solutions.",
+      "I'm a 27 year old passionate freelance web developer from St. Gallen Switzerland, who thrives on creating digital experiences that make a difference. With my expertise in modern web technologies and AI integration, I transform ideas into powerful, scalable solutions.",
     aboutDescription2:
       "Whether you need a lightning-fast website, an LLM-powered application, or a secure private AI solution for your company, I deliver code that's not just functional—it's exceptional.",
     fastDelivery: "Fast Delivery",
@@ -47,7 +47,7 @@ export const translations = {
     aiConsulting: "AI Consulting & Private Solutions",
     aiConsultingDesc: "Strategic AI consulting and secure private AI deployments for companies requiring data security",
     aiConsultingFeature1: "AI strategy and use case identification",
-    aiConsultingFeature2: "Private LLM deployment (on-premise/cloud)",
+    aiConsultingFeature2: "Private LLM deployment or installing",
     aiConsultingFeature3: "Data security and compliance consulting",
     aiConsultingFeature4: "Custom AI workflow implementation",
 
@@ -125,7 +125,7 @@ export const translations = {
     // About Section
     aboutMo: "Über Mo",
     aboutDescription1:
-      "Ich bin ein leidenschaftlicher Freelance Web-Entwickler, der digitale Erlebnisse schafft, die einen Unterschied machen. Mit tiefgreifender Expertise in modernen Web-Technologien und KI-Integration verwandle ich Ideen in leistungsstarke, skalierbare Lösungen.",
+      "Ich bin Mo ein leidenschaftlicher Freelance Web-Entwickler, 27 jahre alt und wohne in St. Gallen.Ich schaffe digitale Erlebnisse, die einen Unterschied machen. Mit meiner Expertise in modernen Web-Technologien und KI-Integration verwandle ich Ideen in leistungsstarke, skalierbare Lösungen.",
     aboutDescription2:
       "Ob Sie eine blitzschnelle Website, eine LLM-gestützte Anwendung oder eine sichere private KI-Lösung für Ihr Unternehmen benötigen - ich liefere Code, der nicht nur funktional, sondern außergewöhnlich ist.",
     fastDelivery: "Schnelle Lieferung",
@@ -155,7 +155,7 @@ export const translations = {
     aiConsultingDesc:
       "Strategische KI-Beratung und sichere private KI-Implementierungen für Unternehmen mit Datenschutzanforderungen",
     aiConsultingFeature1: "KI-Strategie und Anwendungsfall-Identifikation",
-    aiConsultingFeature2: "Private LLM-Bereitstellung (On-Premise/Cloud)",
+    aiConsultingFeature2: "Private LLM-Bereitstellung und Installation",
     aiConsultingFeature3: "Datensicherheit und Compliance-Beratung",
     aiConsultingFeature4: "Maßgeschneiderte KI-Workflow-Implementierung",
 
