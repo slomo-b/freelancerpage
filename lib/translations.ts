@@ -123,7 +123,7 @@ export const translations = {
     exploreServices: "Leistungen erkunden",
 
     // About Section
-    aboutMo: "Über Mo",
+    aboutMo: "Über Mich",
     aboutDescription1:
       "Ich bin Mo ein leidenschaftlicher Freelance Web-Entwickler, 27 jahre alt und wohne in St. Gallen.Ich schaffe digitale Erlebnisse, die einen Unterschied machen. Mit meiner Expertise in modernen Web-Technologien und KI-Integration verwandle ich Ideen in leistungsstarke, skalierbare Lösungen.",
     aboutDescription2:
