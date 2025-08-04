@@ -15,8 +15,6 @@ export function Contact() {
             <div>
               <ContactCard />
             </div>
-        
-          </div>
         </div>
       </div>
     </section>
