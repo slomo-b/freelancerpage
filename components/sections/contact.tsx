@@ -2,7 +2,6 @@
 
 import { SectionHeader } from "@/components/ui/section-header"
 import { ContactCard } from "@/components/ui/contact-card"
-import { ContactForm } from "@/components/ui/contact-form"
 import { useLanguage } from "@/components/language/language-provider"
 
 export function Contact() {
@@ -17,9 +16,7 @@ export function Contact() {
             <div>
               <ContactCard />
             </div>
-            <div>
-              <ContactForm />
-            </div>
+        
           </div>
         </div>
       </div>
