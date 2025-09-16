@@ -4,6 +4,14 @@ export function Footer() {
       <p className="text-xs text-muted-foreground">
         © 2024 mo-freelancer.ch. Alle Rechte vorbehalten.
       </p>
+      <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+        <a
+          href="mailto:contact@mo-freelancer.ch"
+          className="text-xs hover:underline underline-offset-4 text-muted-foreground"
+        >
+          contact@mo-freelancer.ch
+        </a>
+      </nav>
     </footer>
   );
 }

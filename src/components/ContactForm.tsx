@@ -43,8 +43,15 @@ export function ContactForm() {
           <CardHeader>
             <CardTitle>Kontaktieren Sie mich</CardTitle>
             <CardDescription>
-              Haben Sie ein Projekt im Kopf? Ich freue mich, von Ihnen zu
-              hören.
+              Haben Sie ein Projekt im Kopf? Füllen Sie das Formular aus oder
+              senden Sie mir eine E-Mail an{" "}
+              <a
+                href="mailto:contact@mo-freelancer.ch"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                contact@mo-freelancer.ch
+              </a>
+              .
             </CardDescription>
           </CardHeader>
           <CardContent>
