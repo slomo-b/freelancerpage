@@ -6,13 +6,10 @@ export function ProjectHighlight() {
       <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
         <div className="space-y-3">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Aktuelles Projekt: AI Chat & Image App
+            Featured Project: AI Chat & Image App
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Meine Referenz-App demonstriert die nahtlose Integration von
-            Konversations-KI und Bildgenerierung. Sie ist vollständig in der
-            Schweiz gehostet, um maximale Privatsphäre und Datensicherheit zu
-            gewährleisten.
+            My reference app demonstrates the seamless integration of conversational AI and image generation. It is fully hosted in Switzerland to ensure maximum privacy and data security.
           </p>
         </div>
         <img
@@ -22,7 +19,7 @@ export function ProjectHighlight() {
           src="/placeholder.svg"
           width="800"
         />
-        <Button disabled>Live-Demo ansehen (in Kürze)</Button>
+        <Button disabled>View Live Demo (Coming Soon)</Button>
       </div>
     </section>
   );

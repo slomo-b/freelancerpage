@@ -12,7 +12,7 @@ export function Header() {
           className="text-sm font-medium hover:underline underline-offset-4"
           href="#about"
         >
-          Über Mich
+          About
         </a>
         <a
           className="text-sm font-medium hover:underline underline-offset-4"
@@ -24,13 +24,13 @@ export function Header() {
           className="text-sm font-medium hover:underline underline-offset-4"
           href="#projects"
         >
-          Projekte
+          Projects
         </a>
         <a
           className="text-sm font-medium hover:underline underline-offset-4"
           href="#contact"
         >
-          Kontakt
+          Contact
         </a>
       </nav>
     </header>

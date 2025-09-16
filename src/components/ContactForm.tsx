@@ -27,9 +27,9 @@ export function ContactForm() {
     setLoading(false);
 
     if (error) {
-      showError(`Senden fehlgeschlagen: ${error.message}`);
+      showError(`Failed to send: ${error.message}`);
     } else {
-      showSuccess("Vielen Dank! Ihre Nachricht wurde gesendet.");
+      showSuccess("Thank you! Your message has been sent.");
       setName("");
       setEmail("");
       setMessage("");
@@ -41,10 +41,9 @@ export function ContactForm() {
       <div className="container px-4 md:px-6">
         <Card className="mx-auto max-w-xl">
           <CardHeader>
-            <CardTitle>Kontaktieren Sie mich</CardTitle>
+            <CardTitle>Contact Me</CardTitle>
             <CardDescription>
-              Haben Sie ein Projekt im Kopf? Füllen Sie das Formular aus oder
-              senden Sie mir eine E-Mail an{" "}
+              Have a project in mind? Fill out the form or send me an email at{" "}
               <a
                 href="mailto:contact@mo-freelancer.ch"
                 className="font-medium text-primary underline-offset-4 hover:underline"
@@ -60,7 +59,7 @@ export function ContactForm() {
                 <Label htmlFor="name">Name</Label>
                 <Input
                   id="name"
-                  placeholder="Ihr Name"
+                  placeholder="Your Name"
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -70,7 +69,7 @@ export function ContactForm() {
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
-                  placeholder="ihre@email.com"
+                  placeholder="your@email.com"
                   required
                   type="email"
                   value={email}
@@ -78,10 +77,10 @@ export function ContactForm() {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="message">Nachricht</Label>
+                <Label htmlFor="message">Message</Label>
                 <Textarea
                   id="message"
-                  placeholder="Beschreiben Sie Ihr Projekt"
+                  placeholder="Describe your project"
                   required
                   className="min-h-[100px]"
                   value={message}
@@ -92,7 +91,7 @@ export function ContactForm() {
                 {loading ? (
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 ) : null}
-                {loading ? "Senden..." : "Nachricht senden"}
+                {loading ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </CardContent>

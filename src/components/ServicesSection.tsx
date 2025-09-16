@@ -8,11 +8,10 @@ export function ServicesSection() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Meine Dienstleistungen
+              My Services
             </h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Ich biete eine Reihe von Dienstleistungen an, um Ihre Vision in
-              die Realität umzusetzen.
+              I offer a range of services to bring your vision to life.
             </p>
           </div>
         </div>
@@ -20,31 +19,27 @@ export function ServicesSection() {
           <Card>
             <CardHeader className="text-center items-center">
               <Code className="h-10 w-10 mb-4" />
-              <CardTitle>Individuelle Web-Entwicklung</CardTitle>
+              <CardTitle>Custom Web Development</CardTitle>
               <CardDescription>
-                Massgeschneiderte Web-Apps, die perfekt auf Ihre Bedürfnisse
-                zugeschnitten sind – von der Konzeption bis zum Deployment.
+                Tailor-made web apps perfectly suited to your needs—from concept to deployment.
               </CardDescription>
             </CardHeader>
           </Card>
           <Card>
             <CardHeader className="text-center items-center">
               <BrainCircuit className="h-10 w-10 mb-4" />
-              <CardTitle>KI & LLM Integration</CardTitle>
+              <CardTitle>AI & LLM Integration</CardTitle>
               <CardDescription>
-                Integration von fortschrittlichen Sprachmodellen (LLMs) und
-                anderen KI-Diensten, um Ihre Anwendungen intelligenter zu
-                machen.
+                Integration of advanced language models (LLMs) and other AI services to make your applications smarter.
               </CardDescription>
             </CardHeader>
           </Card>
           <Card>
             <CardHeader className="text-center items-center">
               <ShieldCheck className="h-10 w-10 mb-4" />
-              <CardTitle>Schweizer Hosting & Datenschutz</CardTitle>
+              <CardTitle>Swiss Hosting & Data Privacy</CardTitle>
               <CardDescription>
-                Hosting Ihrer Anwendung in der Schweiz mit einem starken Fokus
-                auf Datenschutz und Sicherheit nach höchsten Standards.
+                Hosting your application in Switzerland with a strong focus on data protection and security to the highest standards.
               </CardDescription>
             </CardHeader>
           </Card>
