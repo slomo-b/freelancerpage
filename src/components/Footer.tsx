@@ -1,8 +1,22 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const content = {
+  en: {
+    copyright: "© 2024 mo-freelancer.ch. All rights reserved.",
+  },
+  de: {
+    copyright: "© 2024 mo-freelancer.ch. Alle Rechte vorbehalten.",
+  },
+};
+
 export function Footer() {
+  const { language } = useLanguage();
+  const t = content[language];
+
   return (
     <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
       <p className="text-xs text-muted-foreground">
-        © 2024 mo-freelancer.ch. All rights reserved.
+        {t.copyright}
       </p>
       <nav className="sm:ml-auto flex gap-4 sm:gap-6">
         <a
