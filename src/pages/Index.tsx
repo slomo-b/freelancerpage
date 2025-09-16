@@ -5,10 +5,12 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { ProjectHighlight } from "@/components/ProjectHighlight";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
+import { BlurryBackground } from "@/components/BlurryBackground";
 
 const Index = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
+    <div className="flex flex-col min-h-screen text-foreground">
+      <BlurryBackground />
       <Header />
       <main className="flex-grow">
         <HeroSection />

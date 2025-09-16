@@ -19,7 +19,7 @@ export function HeroSection() {
   const t = content[language];
 
   return (
-    <section id="hero" className="w-full py-24 md:py-32 lg:py-48 xl:py-64 bg-gradient-to-br from-background to-slate-100 dark:from-background dark:to-slate-900">
+    <section id="hero" className="w-full py-24 md:py-32 lg:py-48 xl:py-64">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-6 text-center">
           <div className="space-y-4">

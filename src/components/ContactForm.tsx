@@ -73,13 +73,13 @@ export function ContactForm() {
   return (
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
-        <Card className="mx-auto max-w-xl border-2">
+        <Card className="mx-auto max-w-xl border-2 bg-card/70 backdrop-blur-sm">
           <CardHeader className="text-center">
             <CardTitle className="text-3xl font-bold">{t.title}</CardTitle>
             <CardDescription>
               {t.description}{" "}
               <a
-                href="mailto:contact@mo-freelancer.ch"
+                href="mailto:contact@mo-freancer.ch"
                 className="font-medium text-primary underline-offset-4 hover:underline"
               >
                 contact@mo-freelancer.ch
