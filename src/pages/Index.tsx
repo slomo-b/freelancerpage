@@ -6,6 +6,7 @@ import { ProjectHighlight } from "@/components/ProjectHighlight";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { BlurryBackground } from "@/components/BlurryBackground";
+import { AnimatedSection } from "@/components/AnimatedSection";
 
 const Index = () => {
   return (
@@ -13,11 +14,21 @@ const Index = () => {
       <BlurryBackground />
       <Header />
       <main className="flex-grow">
-        <HeroSection />
-        <AboutSection />
-        <ServicesSection />
-        <ProjectHighlight />
-        <ContactForm />
+        <AnimatedSection>
+          <HeroSection />
+        </AnimatedSection>
+        <AnimatedSection>
+          <AboutSection />
+        </AnimatedSection>
+        <AnimatedSection>
+          <ServicesSection />
+        </AnimatedSection>
+        <AnimatedSection>
+          <ProjectHighlight />
+        </AnimatedSection>
+        <AnimatedSection>
+          <ContactForm />
+        </AnimatedSection>
       </main>
       <Footer />
     </div>
