@@ -72,7 +72,7 @@ const content = {
     ],
     techStackTitle: "Technology Stack",
     techStack: ["React 19", "Next.js 15", "TypeScript", "Tailwind CSS", "shadcn/ui", "PostgreSQL", "pgvector", "Stripe", "Infomaniak AI API", "Custom JWT Auth"],
-    button: "View Live Demo (Coming Soon)",
+    button: "View Live Demo",
   },
   de: {
     title: "Vorgestelltes Projekt: Haidi AI Chat",
@@ -140,7 +140,7 @@ const content = {
     ],
     techStackTitle: "Technologie-Stack",
     techStack: ["React 19", "Next.js 15", "TypeScript", "Tailwind CSS", "shadcn/ui", "PostgreSQL", "pgvector", "Stripe", "Infomaniak AI API", "Custom JWT Auth"],
-    button: "Live-Demo ansehen (in Kürze verfügbar)",
+    button: "Live-Demo ansehen",
   },
 };
 
@@ -161,13 +161,14 @@ export function ProjectHighlight() {
             </p>
           </div>
 
-          <img
-            alt="Haidi AI Project"
-            className="mx-auto aspect-[2/1] overflow-hidden rounded-lg object-cover my-8"
-            height="400"
-            src="/haidi.png"
-            width="800"
-          />
+          <div className="mx-auto aspect-video overflow-hidden rounded-lg my-8 border bg-white">
+            <iframe
+              src="https://haidi.app"
+              title="Haidi AI Live Demo"
+              className="w-full h-full"
+              allow="fullscreen"
+            />
+          </div>
 
           <div className="space-y-8">
             <h3 className="text-2xl font-bold text-center">{t.coreFeaturesTitle}</h3>
@@ -230,7 +231,9 @@ export function ProjectHighlight() {
           </div>
 
           <div className="text-center mt-12">
-            <Button disabled size="lg">{t.button}</Button>
+            <a href="https://haidi.app" target="_blank" rel="noopener noreferrer">
+              <Button size="lg">{t.button}</Button>
+            </a>
           </div>
         </div>
       </div>
