@@ -165,7 +165,7 @@ export function ProjectHighlight() {
             alt="Haidi AI Project"
             className="mx-auto aspect-[2/1] overflow-hidden rounded-lg object-cover my-8"
             height="400"
-            src="/placeholder.svg"
+            src="/haidi.png"
             width="800"
           />
 
