@@ -16,7 +16,7 @@ export function AboutSection() {
                 Über Mich
               </h2>
               <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Ich bin ein leidenschaftlicher AI Engineer und Web-Entwickler,
+                Mein Name ist Mo, ich bin 27 Jahre alt und ein leidenschaftlicher AI Engineer und Web-Entwickler,
                 der sich darauf spezialisiert hat, komplexe Probleme mit
                 intelligenten, datengesteuerten Lösungen zu lösen. Mein Weg war
                 grösstenteils autodidaktisch, angetrieben von einer tiefen
