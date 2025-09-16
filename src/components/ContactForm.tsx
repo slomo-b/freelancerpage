@@ -1,14 +1,39 @@
+"use client";
+
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
+import { showSuccess, showError } from "@/utils/toast";
+import { Loader2 } from "lucide-react";
 
 export function ContactForm() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Hier würde die Logik zum Senden des Formulars stehen
-    alert("Vielen Dank für Ihre Nachricht! Das Formular ist derzeit noch nicht verbunden.");
+    setLoading(true);
+
+    const { error } = await supabase
+      .from("contacts")
+      .insert([{ name, email, message }]);
+
+    setLoading(false);
+
+    if (error) {
+      showError(`Senden fehlgeschlagen: ${error.message}`);
+    } else {
+      showSuccess("Vielen Dank! Ihre Nachricht wurde gesendet.");
+      setName("");
+      setEmail("");
+      setMessage("");
+    }
   };
 
   return (
@@ -26,7 +51,13 @@ export function ContactForm() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
-                <Input id="name" placeholder="Ihr Name" required />
+                <Input
+                  id="name"
+                  placeholder="Ihr Name"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
@@ -35,6 +66,8 @@ export function ContactForm() {
                   placeholder="ihre@email.com"
                   required
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="space-y-2">
@@ -44,10 +77,15 @@ export function ContactForm() {
                   placeholder="Beschreiben Sie Ihr Projekt"
                   required
                   className="min-h-[100px]"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
-              <Button className="w-full" type="submit">
-                Nachricht senden
+              <Button className="w-full" type="submit" disabled={loading}>
+                {loading ? (
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                ) : null}
+                {loading ? "Senden..." : "Nachricht senden"}
               </Button>
             </form>
           </CardContent>
