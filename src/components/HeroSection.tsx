@@ -19,11 +19,11 @@ export function HeroSection() {
   const t = content[language];
 
   return (
-    <section id="hero" className="w-full py-20 md:py-32 lg:py-40 xl:py-56 bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 dark:via-background dark:to-blue-900">
+    <section id="hero" className="w-full py-24 md:py-32 lg:py-48 xl:py-64 bg-gradient-to-br from-background to-slate-100 dark:from-background dark:to-slate-900">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none">
+        <div className="flex flex-col items-center space-y-6 text-center">
+          <div className="space-y-4">
+            <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none text-foreground">
               {t.title}
             </h1>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
@@ -32,7 +32,7 @@ export function HeroSection() {
           </div>
           <div className="space-x-4">
             <a href="#contact">
-              <Button>{t.button}</Button>
+              <Button size="lg">{t.button}</Button>
             </a>
           </div>
         </div>

@@ -73,9 +73,9 @@ export function ContactForm() {
   return (
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
-        <Card className="mx-auto max-w-xl">
-          <CardHeader>
-            <CardTitle>{t.title}</CardTitle>
+        <Card className="mx-auto max-w-xl border-2">
+          <CardHeader className="text-center">
+            <CardTitle className="text-3xl font-bold">{t.title}</CardTitle>
             <CardDescription>
               {t.description}{" "}
               <a
@@ -121,7 +121,7 @@ export function ContactForm() {
                   onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
-              <Button className="w-full" type="submit" disabled={loading}>
+              <Button size="lg" className="w-full" type="submit" disabled={loading}>
                 {loading ? (
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 ) : null}

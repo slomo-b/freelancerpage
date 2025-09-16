@@ -43,29 +43,29 @@ export function ServicesSection() {
           </div>
         </div>
         <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 mt-12">
-          <Card>
-            <CardHeader className="text-center items-center">
-              <Code className="h-10 w-10 mb-4" />
-              <CardTitle>{t.service1Title}</CardTitle>
-              <CardDescription>
+          <Card className="bg-background/50 border-2 border-transparent hover:border-primary transition-colors">
+            <CardHeader className="text-center items-center p-8">
+              <Code className="h-12 w-12 mb-4 text-primary" />
+              <CardTitle className="text-xl font-semibold">{t.service1Title}</CardTitle>
+              <CardDescription className="mt-2">
                 {t.service1Desc}
               </CardDescription>
             </CardHeader>
           </Card>
-          <Card>
-            <CardHeader className="text-center items-center">
-              <BrainCircuit className="h-10 w-10 mb-4" />
-              <CardTitle>{t.service2Title}</CardTitle>
-              <CardDescription>
+          <Card className="bg-background/50 border-2 border-transparent hover:border-primary transition-colors">
+            <CardHeader className="text-center items-center p-8">
+              <BrainCircuit className="h-12 w-12 mb-4 text-primary" />
+              <CardTitle className="text-xl font-semibold">{t.service2Title}</CardTitle>
+              <CardDescription className="mt-2">
                 {t.service2Desc}
               </CardDescription>
             </CardHeader>
           </Card>
-          <Card>
-            <CardHeader className="text-center items-center">
-              <ShieldCheck className="h-10 w-10 mb-4" />
-              <CardTitle>{t.service3Title}</CardTitle>
-              <CardDescription>
+          <Card className="bg-background/50 border-2 border-transparent hover:border-primary transition-colors">
+            <CardHeader className="text-center items-center p-8">
+              <ShieldCheck className="h-12 w-12 mb-4 text-primary" />
+              <CardTitle className="text-xl font-semibold">{t.service3Title}</CardTitle>
+              <CardDescription className="mt-2">
                 {t.service3Desc}
               </CardDescription>
             </CardHeader>
