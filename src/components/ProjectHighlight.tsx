@@ -3,13 +3,13 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const content = {
   en: {
-    title: "Featured Project: AI Chat & Image App",
-    description: "My reference app demonstrates the seamless integration of conversational AI and image generation. It is fully hosted in Switzerland to ensure maximum privacy and data security.",
+    title: "Featured Project: Haidi AI",
+    description: "My reference app, Haidi AI, demonstrates the seamless integration of conversational AI and image generation. It is fully hosted in Switzerland to ensure maximum privacy and data security.",
     button: "View Live Demo (Coming Soon)",
   },
   de: {
-    title: "Vorgestelltes Projekt: KI-Chat & Bild-App",
-    description: "Meine Referenz-App demonstriert die nahtlose Integration von Konversations-KI und Bilderzeugung. Sie wird vollständig in der Schweiz gehostet, um maximale Privatsphäre und Datensicherheit zu gewährleisten.",
+    title: "Vorgestelltes Projekt: Haidi AI",
+    description: "Meine Referenz-App, Haidi AI, demonstriert die nahtlose Integration von Konversations-KI und Bilderzeugung. Sie wird vollständig in der Schweiz gehostet, um maximale Privatsphäre und Datensicherheit zu gewährleisten.",
     button: "Live-Demo ansehen (in Kürze verfügbar)",
   },
 };
