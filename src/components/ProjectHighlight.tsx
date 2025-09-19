@@ -161,7 +161,7 @@ export function ProjectHighlight() {
             </p>
           </div>
 
-          <div className="mx-auto aspect-video overflow-hidden rounded-lg my-8 border bg-white">
+          <div className="mx-auto aspect-video overflow-auto rounded-lg my-8 border bg-white">
             <iframe
               src="https://haidi.app"
               title="Haidi AI Live Demo"
