@@ -54,20 +54,34 @@ export function ContactForm() {
     e.preventDefault();
     setLoading(true);
 
-    const { error } = await supabase
+    // 1. In die Datenbank als Backup speichern
+    const { error: dbError } = await supabase
       .from("contacts")
       .insert([{ name, email, message }]);
 
+    if (dbError) {
+      setLoading(false);
+      showError(`${t.errorMessage} ${dbError.message}`);
+      return; // Abbrechen, wenn DB-Speicherung fehlschlägt
+    }
+
+    // 2. E-Mail-Benachrichtigung über Edge Function auslösen
+    const { error: functionError } = await supabase.functions.invoke('send-contact-email', {
+      body: { name, email, message },
+    });
+    
     setLoading(false);
 
-    if (error) {
-      showError(`${t.errorMessage} ${error.message}`);
-    } else {
-      showSuccess(t.successMessage);
-      setName("");
-      setEmail("");
-      setMessage("");
+    if (functionError) {
+      // Fehler nur in der Konsole protokollieren, aber dem Benutzer trotzdem Erfolg anzeigen,
+      // da die Nachricht sicher in der Datenbank gespeichert ist.
+      console.error("Fehler beim Senden der E-Mail:", functionError.message);
     }
+    
+    showSuccess(t.successMessage);
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   return (
