@@ -72,7 +72,7 @@ const content = {
     ],
     techStackTitle: "Technology Stack",
     techStack: ["React 19", "Next.js 15", "TypeScript", "Tailwind CSS", "shadcn/ui", "PostgreSQL", "pgvector", "Stripe", "Infomaniak AI API", "Custom JWT Auth"],
-    button: "View Live Demo",
+    button: "To the App",
   },
   de: {
     title: "Vorgestelltes Projekt: Haidi AI Chat",
@@ -140,7 +140,7 @@ const content = {
     ],
     techStackTitle: "Technologie-Stack",
     techStack: ["React 19", "Next.js 15", "TypeScript", "Tailwind CSS", "shadcn/ui", "PostgreSQL", "pgvector", "Stripe", "Infomaniak AI API", "Custom JWT Auth"],
-    button: "Live-Demo ansehen",
+    button: "Zur App",
   },
 };
 
