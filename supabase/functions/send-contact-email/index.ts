@@ -1,7 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts"
 import { Resend } from 'npm:resend'
 
-// Holt den API-Schlüssel aus den Supabase Secrets
+// Get the API key from Supabase secrets
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
 
 const corsHeaders = {
@@ -10,38 +10,38 @@ const corsHeaders = {
 }
 
 serve(async (req) => {
-  // Behandelt CORS Preflight-Anfragen
+  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders })
   }
 
   try {
     if (!RESEND_API_KEY) {
-      throw new Error('RESEND_API_KEY ist in den Umgebungsvariablen nicht gesetzt.')
+      throw new Error('RESEND_API_KEY is not set in environment variables.')
     }
     
     const resend = new Resend(RESEND_API_KEY)
     const { name, email, message } = await req.json()
 
     if (!name || !email || !message) {
-      return new Response(JSON.stringify({ error: 'Name, E-Mail und Nachricht sind erforderlich.' }), {
+      return new Response(JSON.stringify({ error: 'Name, email, and message are required.' }), {
         status: 400,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       })
     }
 
-    // Sendet die E-Mail
+    // Send the email
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio Formular <formular@mo-freelancer.ch>', // WICHTIG: Diese Domain muss in Resend verifiziert sein.
+      from: 'Portfolio Form <form@mo-freelancer.ch>', // IMPORTANT: This domain must be verified in Resend.
       to: ['contact@mo-freelancer.ch'],
-      subject: `Neue Kontaktanfrage von ${name}`,
+      subject: `New contact request from ${name}`,
       reply_to: email,
       html: `
-        <h1>Neue Nachricht von Ihrer Portfolio-Webseite</h1>
+        <h1>New Message from your Portfolio Website</h1>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
         <hr>
-        <p><strong>Nachricht:</strong></p>
+        <p><strong>Message:</strong></p>
         <p style="white-space: pre-wrap;">${message}</p>
       `,
     })

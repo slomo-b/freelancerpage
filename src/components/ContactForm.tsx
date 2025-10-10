@@ -24,7 +24,7 @@ const content = {
     sendButton: "Send Message",
     sendingButton: "Sending...",
     successMessage: "Thank you! Your message has been sent.",
-    errorMessage: "Failed to send:",
+    errorMessage: "Failed to send message:",
   },
   de: {
     title: "Kontaktieren Sie mich",
@@ -54,34 +54,34 @@ export function ContactForm() {
     e.preventDefault();
     setLoading(true);
 
-    // 1. In die Datenbank als Backup speichern
+    // 1. Invoke Edge Function to send email first. This is the primary action.
+    const { error: functionError } = await supabase.functions.invoke('send-contact-email', {
+      body: { name, email, message },
+    });
+
+    if (functionError) {
+      setLoading(false);
+      showError(`${t.errorMessage} ${functionError.message}`);
+      return;
+    }
+
+    // Email was sent successfully. Inform the user and clear the form.
+    showSuccess(t.successMessage);
+    setName("");
+    setEmail("");
+    setMessage("");
+    setLoading(false);
+
+    // 2. Save to the database as a backup.
+    // If this fails, we don't show an error to the user because the email was already sent.
+    // We just log it to the console for debugging.
     const { error: dbError } = await supabase
       .from("contacts")
       .insert([{ name, email, message }]);
 
     if (dbError) {
-      setLoading(false);
-      showError(`${t.errorMessage} ${dbError.message}`);
-      return; // Abbrechen, wenn DB-Speicherung fehlschlägt
+      console.error("Failed to save contact to database (backup):", dbError.message);
     }
-
-    // 2. E-Mail-Benachrichtigung über Edge Function auslösen
-    const { error: functionError } = await supabase.functions.invoke('send-contact-email', {
-      body: { name, email, message },
-    });
-    
-    setLoading(false);
-
-    if (functionError) {
-      // Fehler nur in der Konsole protokollieren, aber dem Benutzer trotzdem Erfolg anzeigen,
-      // da die Nachricht sicher in der Datenbank gespeichert ist.
-      console.error("Fehler beim Senden der E-Mail:", functionError.message);
-    }
-    
-    showSuccess(t.successMessage);
-    setName("");
-    setEmail("");
-    setMessage("");
   };
 
   return (
