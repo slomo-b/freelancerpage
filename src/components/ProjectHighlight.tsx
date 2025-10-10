@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2 } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const content = {
   en: {
@@ -170,64 +171,76 @@ export function ProjectHighlight() {
             />
           </div>
 
-          <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-center">{t.coreFeaturesTitle}</h3>
-            <Tabs defaultValue={t.tabs[0].trigger} className="w-full">
-              <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value={t.tabs[0].trigger}>Chat</TabsTrigger>
-                <TabsTrigger value={t.tabs[1].trigger}>Document Analysis (RAG)</TabsTrigger>
-                <TabsTrigger value={t.tabs[2].trigger}>Image Generation</TabsTrigger>
-              </TabsList>
-              {t.tabs.map((tab) => (
-                <TabsContent key={tab.trigger} value={tab.trigger} className="mt-4">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>{tab.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <ul className="space-y-2">
-                        {tab.features.map((feature, index) => (
-                          <li key={index} className="flex items-start">
-                            <CheckCircle2 className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-primary" />
-                            <span className="text-muted-foreground">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </TabsContent>
-              ))}
-            </Tabs>
+          <div className="space-y-12">
+            <Card>
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl font-bold">{t.coreFeaturesTitle}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Tabs defaultValue={t.tabs[0].trigger} className="w-full">
+                  <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 h-auto sm:h-10">
+                    <TabsTrigger value={t.tabs[0].trigger}>Chat</TabsTrigger>
+                    <TabsTrigger value={t.tabs[1].trigger}>Document Analysis (RAG)</TabsTrigger>
+                    <TabsTrigger value={t.tabs[2].trigger}>Image Generation</TabsTrigger>
+                  </TabsList>
+                  {t.tabs.map((tab) => (
+                    <TabsContent key={tab.trigger} value={tab.trigger} className="mt-6">
+                      <div className="p-6 border rounded-lg bg-background/50">
+                        <h3 className="text-xl font-semibold mb-4">{tab.title}</h3>
+                        <ul className="space-y-3">
+                          {tab.features.map((feature, index) => (
+                            <li key={index} className="flex items-start">
+                              <CheckCircle2 className="mr-3 mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                              <span className="text-muted-foreground">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </TabsContent>
+                  ))}
+                </Tabs>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="text-2xl font-bold text-center mb-4">{t.techDetailsTitle}</h3>
-              <Accordion type="single" collapsible className="w-full">
-                {t.accordion.map((item, index) => (
-                  <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-lg">{item.trigger}</AccordionTrigger>
-                    <AccordionContent>
-                      <ul className="space-y-2 pl-4">
-                        {item.details.map((detail, dIndex) => (
-                          <li key={dIndex} className="flex items-start">
-                            <CheckCircle2 className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-primary" />
-                            <span className="text-muted-foreground">{detail}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
+            <Card>
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl font-bold">{t.techDetailsTitle}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                  {t.accordion.map((item, index) => (
+                    <AccordionItem key={index} value={`item-${index}`}>
+                      <AccordionTrigger className="text-lg text-left hover:no-underline">
+                        {item.trigger}
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="space-y-3 pt-2 pl-2">
+                          {item.details.map((detail, dIndex) => (
+                            <li key={dIndex} className="flex items-start">
+                              <CheckCircle2 className="mr-3 mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                              <span className="text-muted-foreground">{detail}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="text-2xl font-bold text-center mb-4">{t.techStackTitle}</h3>
-              <div className="flex flex-wrap justify-center gap-2">
+            <Card>
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl font-bold">{t.techStackTitle}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-wrap justify-center gap-3">
                 {t.techStack.map((tech) => (
-                  <Badge key={tech} variant="secondary" className="text-sm">{tech}</Badge>
+                  <Badge key={tech} variant="secondary" className="text-sm px-3 py-1">
+                    {tech}
+                  </Badge>
                 ))}
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="text-center mt-12">
@@ -240,9 +253,3 @@ export function ProjectHighlight() {
     </section>
   );
 }
-
-// Dummy components to satisfy TypeScript until real ones are imported or defined
-const Card = ({ children, ...props }: React.HTMLAttributes<HTMLDivElement>) => <div {...props}>{children}</div>;
-const CardHeader = ({ children, ...props }: React.HTMLAttributes<HTMLDivElement>) => <div {...props}>{children}</div>;
-const CardTitle = ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => <h4 {...props}>{children}</h4>;
-const CardContent = ({ children, ...props }: React.HTMLAttributes<HTMLDivElement>) => <div {...props}>{children}</div>;
