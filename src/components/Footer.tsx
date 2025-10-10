@@ -2,10 +2,10 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const content = {
   en: {
-    copyright: "© 2024 mo-freelancer.ch. All rights reserved.",
+    copyright: "© 2025 mo-freelancer.ch. All rights reserved.",
   },
   de: {
-    copyright: "© 2024 mo-freelancer.ch. Alle Rechte vorbehalten.",
+    copyright: "© 2025 mo-freelancer.ch. Alle Rechte vorbehalten.",
   },
 };
 
