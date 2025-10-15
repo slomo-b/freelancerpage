@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Code, BrainCircuit, ShieldCheck } from "lucide-react";
+import { Code, BrainCircuit, ShieldCheck, TrendingUp } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const content = {
@@ -12,6 +12,8 @@ const content = {
     service2Desc: "Integration of advanced language models (LLMs) and other AI services to make your applications smarter.",
     service3Title: "Swiss Hosting & Data Privacy",
     service3Desc: "Hosting your application in Switzerland with a strong focus on data protection and security to the highest standards.",
+    service4Title: "SEO Optimization",
+    service4Desc: "Professional SEO optimization directly in the code for any website (WordPress, HTML, modern frameworks), including Google Search Console setup, to avoid costly and inefficient plugins.",
   },
   de: {
     title: "Meine Services",
@@ -22,6 +24,8 @@ const content = {
     service2Desc: "Integration fortschrittlicher Sprachmodelle (LLMs) und anderer KI-Dienste, um Ihre Anwendungen intelligenter zu machen.",
     service3Title: "Schweizer Hosting & Datenschutz",
     service3Desc: "Hosting Ihrer Anwendung in der Schweiz mit starkem Fokus auf Datenschutz und Sicherheit nach höchsten Standards.",
+    service4Title: "SEO-Optimierung",
+    service4Desc: "Professionelle SEO-Optimierung direkt im Code für jede Website (WordPress, HTML, moderne Frameworks), inklusive Einrichtung der Google Search Console, um kostspielige Plugins zu vermeiden.",
   },
 };
 
@@ -42,7 +46,7 @@ export function ServicesSection() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 mt-12">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 md:gap-12 mt-12">
           <Card className="bg-background/50 border-2 border-transparent hover:border-primary transition-colors">
             <CardHeader className="text-center items-center p-8">
               <Code className="h-12 w-12 mb-4 text-primary" />
@@ -67,6 +71,15 @@ export function ServicesSection() {
               <CardTitle className="text-xl font-semibold">{t.service3Title}</CardTitle>
               <CardDescription className="mt-2">
                 {t.service3Desc}
+              </CardDescription>
+            </CardHeader>
+          </Card>
+          <Card className="bg-background/50 border-2 border-transparent hover:border-primary transition-colors">
+            <CardHeader className="text-center items-center p-8">
+              <TrendingUp className="h-12 w-12 mb-4 text-primary" />
+              <CardTitle className="text-xl font-semibold">{t.service4Title}</CardTitle>
+              <CardDescription className="mt-2">
+                {t.service4Desc}
               </CardDescription>
             </CardHeader>
           </Card>
