@@ -4,12 +4,12 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const content = {
   en: {
     title: "Crafting Intelligent Web Experiences",
-    subtitle: "As a passionate AI Engineer, I build custom web applications with LLM integration, hosted securely in Switzerland with a maximum focus on data privacy.",
+    subtitle: "As a passionate AI Engineer & Web Developer, I create custom websites and intelligent web applications. From AI integration and professional SEO to secure Swiss hosting, I deliver comprehensive digital solutions with a focus on data privacy.",
     button: "Request a Project",
   },
   de: {
     title: "Gestaltung intelligenter Web-Erlebnisse",
-    subtitle: "Als leidenschaftlicher AI Engineer erstelle ich massgeschneiderte Webanwendungen mit LLM-Integration, die sicher in der Schweiz gehostet werden und höchsten Wert auf Datenschutz legen.",
+    subtitle: "Als passionierter AI Engineer & Web-Entwickler erstelle ich massgeschneiderte Websites und intelligente Webanwendungen. Von der KI-Integration über professionelle SEO-Optimierung bis hin zum sicheren Schweizer Hosting – ich biete umfassende digitale Lösungen mit Fokus auf Datenschutz.",
     button: "Projekt anfragen",
   },
 };
